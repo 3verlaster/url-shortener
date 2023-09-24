@@ -24,9 +24,7 @@ def main():
     args = parser.parse_args()
     if args.url:
         #args.url
-        print()
-        print("[WARNING] v.gd domain is not recommended because warns that the link may be dangerous")
-        print()
+        print("\n[WARNING] v.gd domain is not recommended because warns that the link may be dangerous\n")
         print("1 - v.gd | 2 - is.gd")
         hMethod = input(str("Please select a domain: "))
         if hMethod == "1":
@@ -41,7 +39,7 @@ def main():
                 print("[v.gd API] - [*] Reading response...")
                 data = response.json()
                 hShortURL = data.get("shorturl")
-                print("Here's your shortened link:", hShortURL)
+                print("\nHere's your shortened link:", hShortURL, "\n")
                 spcopy(hShortURL)
             else:
                 print("Request error:", response.status_code)
@@ -57,7 +55,7 @@ def main():
                 print("[is.gd API] - [*] Reading response...")
                 data = response.json()
                 hShortURL = data.get("shorturl")
-                print("Here's your shortened link:", hShortURL)
+                print("\nHere's your shortened link:", hShortURL, "\n")
                 spcopy(hShortURL)
             else:
                 print("Request error:", response.status_code)
